@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Ganga Tide charset</title>
+  </head>
+  <body>
+    
+
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="ganga_ghat/arn1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="ganga_ghat/arn2.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="ganga_ghat/arn3.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="ganga_ghat/arn4.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="ganga_ghat/arn5.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="ganga_ghat/arn6.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+      </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+        <style>
+            
+
+            .carousel-inner{
+              height: 600px;
+              background-color: aquamarine;
+              border: 5px solid rebeccapurple;
+              border-radius: 15px;
+            }
+
+            .ctn1{
+              margin: auto;
+              text-align: center;
+              font-family: 'Courier New', Courier, monospace;
+
+            }
+            .img3{
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              width: 100%;
+              background-color: aquamarine;
+              border: 5px solid rebeccapurple;
+              border-radius: 15px;
+
+            }
+
+            .btn2{
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              width: 25%;
+              font-size: 20px;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              border-radius: 10px;
+              border: 10 px solid green;
+              background-color: yellow;
+            }
+      
+
+        </style>
+     
+
+    
+    
+    
+    
+          <h1 class="ctn1" id="Day_November"><br>November<input type="number"  id="novemberDay" min="0" max="30">:2022</h1><br>
+             <button class="btn2"  id="btn_November" type="button" onclick="yourDate()">Submit the day</button> 
+          <h2 class="ctn1"  id="loadYourVal"></h2>
+          <img class="img3"  src="" id="images" height="1000px;" width="100%">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfl4SFY17RnwxMqYajDbY9zSihMv40SItONTinoHt_s4fPMjg/viewform?embedded=true" width="480" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+
+
+
+        <!-- <button id="changer" onClick="myImage()"><h1>click</h1></button> -->
+        <script type="text/javascript">
+          var xyz = document.getElementById("novemberDay").value;
+        console.log(xyz);
+        
+        //0=day||1=tithi||2=juarTime
+        var x= [[1,8,"4:20am/pm"],[2,9,"5:30am/pm"],[3,10,"6:30am"],[4,11,"7:20am"],[5,12,"8:10am"],
+                [6,13,"9:00am"],[7,14,"10:10am"],[8,15,"11:10am"],[9,1,"11:40am"],[10,2,"12:20pm"],
+                [11,3,"12:40pm"],[12,4,"1:00pm"],[13,5,"1:45pm"],[14,6,"2:30pm"],[15,7,"3:20pm"],
+                [16,8,"4:20pm/am"],[17,9,"5:30am/pm"],[18,10,"6:30am/pm"],[19,11,"7:20am"],[20,12,"8:11am"],
+                [21,13,"9:00am"],[22,14,"10:10am"],[23,15,"10:10am"],[24,1,"11:40am"],[25,2,"12:20pm"],
+                [26,3,"12:50pm"],[27,4,"1:10pm"],[28,5,"1:45pm"],[29,6,"2:30pm"],[30,7,"3:20pm"]
+      
+            ];
+        console.log(x[1][1]);
+    
+    
+    
+        // setInterval(function(){
+        //  var inpX = document.getElementById("novemberDay").value;
+        //  if(inpX<0){inpX = 0}
+        //  if(inpX>30){inpX = 30}
+        // },200);
+    
+    
+    
+        
+                 var dd;
+                var today = new Date();
+                dd = String(today.getDate());
+                console.log(dd);
+                
+                  document.getElementById("novemberDay").defaultValue=dd;
+    
+              function yourDate(){
+                 var inptVal = document.getElementById("novemberDay").value;
+                 document.getElementById("btn_November").style.backgroundColor = "green";
+                 document.getElementById("btn_November").innerHTML ="succsful! Date Entered"
+    
+                var day = inptVal
+                var tithi = x[inptVal][1];
+                var juarTime = x[inptVal][2];
+                document.getElementById("loadYourVal").innerHTML="The day is "+day+"  November:2022  <br> "+tithi+"th  Tithi .<br> Today will juar at time :=>  "+juarTime;
+                
+                document.getElementById("images").src="Ganga_30/"+inptVal+".jpeg";
+              
+    
+    
+               
+              }
+    
+    
+       
+        
+        
+       // console.log(inptValu);
+        console.log(x[dd][1])
+    
+        var day = dd
+        var tithi = x[dd][1];
+        var juarTime = x[dd][2];
+        
+       // console.log("today is "+day+"  November:2022   "+tithi+"th  Tithi . Today will juar at time :=>  "+juarTime);
+              
+       document.getElementById("loadYourVal").innerHTML=" today is "+day+"  November:2022 <br>  "+tithi+"th  Tithi . <br>Today will juar at time :=>  "+juarTime;
+    
+    
+        // function myImage(){
+        // 		document.getElementById("images").src="Ganga_30/"+dd+".jpeg";
+        // 	}
+    
+          document.getElementById("images").src="Ganga_30/"+dd+".jpeg";
+    
+        var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    
+    today = mm + '/' + dd + '/' + yyyy;
+    console.log(today);
+    //document.write(today);
+    
+        </script>
+
+
+
+
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
